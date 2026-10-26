@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+# Raw source spreadsheets (~750 MB, CC BY 4.0) are re-downloadable via scripts/download_data.py
+data/raw/**/*.xlsx
+# Large intermediate parquet
+data/interim/
+*.log
+.ipynb_checkpoints/
