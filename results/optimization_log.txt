@@ -1,0 +1,87 @@
+167 test days; forecast models: solar=hist_gbr, demand=xgboost
+   20/167 days (90s)
+   40/167 days (177s)
+   60/167 days (264s)
+   80/167 days (351s)
+   100/167 days (438s)
+   120/167 days (525s)
+   140/167 days (612s)
+   160/167 days (699s)
+case                        baseline  rule_based  forecast_informed  perfect_foresight
+pv_available_mwh            7140.185    7140.185           7140.185           7140.185
+curtailment_mwh              967.870     578.765             91.698             41.470
+pv_used_mwh                 6172.316    6561.420           7048.487           7098.715
+loss_mwh                     403.284     392.117            334.913            336.593
+received_export_mwh          990.364    1012.997            676.458            707.543
+import_mwh                  7234.802    6895.102           6067.459           6061.854
+net_received_mwh           -6244.438   -5882.105          -5391.001          -5354.311
+delivered_mwh              13003.833   13415.571          13542.362          13584.762
+peak_import_mw                 3.760       3.760              2.888              2.830
+battery_throughput_mwh         0.000     740.270           1777.711           2009.102
+v_violation_hours              0.000       0.000              0.000              0.000
+thermal_violation_hours        0.000       0.000              0.000              0.000
+export_violation_hours         0.000       0.000              0.000              0.000
+lp_slack_total                 0.000       0.000              0.000              0.000
+mean_daily_peak_import_mw      3.262       3.188              2.470              2.415
+mean_evening_ramp_3h_mw        3.627       3.273              2.699              2.743
+solar_utilisation_pct         86.445      91.894             98.716             99.419
+days                         167.000     167.000            167.000            167.000
+{
+ "days_total": 167,
+ "days_all_cases_optimal": 167,
+ "battery": {
+  "bus": 17,
+  "power_mw": 1.5,
+  "energy_mwh": 6.0,
+  "eta": 0.95,
+  "soc_min": 0.1,
+  "soc_max": 0.9,
+  "soc_init": 0.5
+ },
+ "weights": {
+  "curt": 1.0,
+  "loss": 1.0,
+  "ramp": 0.05,
+  "deg": 0.005,
+  "slack": 1000.0
+ },
+ "export_limit_mw": 1.0,
+ "pv_rated_mw_per_site": 1.5,
+ "flex_frac": 0.1,
+ "forecast_mae_mw_on_these_days": {
+  "solar_mw": 1304.4674965595987,
+  "demand_mw": 4660.647230108606
+ },
+ "status_counts": [
+  [
+   "baseline",
+   "Optimal",
+   167
+  ],
+  [
+   "forecast_informed",
+   "Optimal",
+   167
+  ],
+  [
+   "perfect_foresight",
+   "Optimal",
+   167
+  ],
+  [
+   "rule_based",
+   "Optimal",
+   167
+  ]
+ ]
+}
+                   curtailment_mwh  loss_mwh  mean_evening_ramp_3h_mw  mean_peak_import_mw  throughput_mwh  days
+param       value                                                                                               
+battery_mwh 3.00            45.867    41.295                    3.116                2.615         142.923    20
+            12.00            4.424    38.747                    2.308                2.313         270.008    20
+loss        0.00            10.503    40.684                    2.902                2.426         216.002    20
+            3.00            14.819    39.058                    2.644                2.452         255.068    20
+ramp        0.00            15.731    39.083                    2.699                2.493         216.002    20
+            0.05            14.011    39.310                    2.736                2.441         216.002    20
+            0.20            10.518    40.026                    2.912                2.434         216.002    20
+            1.00            17.150    40.002                    2.770                2.425         322.844    20

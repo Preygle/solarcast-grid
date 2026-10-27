@@ -1,0 +1,63 @@
+{
+  "battery_bus": 17,
+  "configs": [
+    [
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    [
+      6,
+      8,
+      13,
+      31,
+      36
+    ],
+    [
+      5,
+      8,
+      34,
+      35,
+      36
+    ],
+    [
+      11,
+      26,
+      32,
+      33,
+      34
+    ],
+    [
+      12,
+      32,
+      33,
+      34,
+      36
+    ],
+    [
+      6,
+      32,
+      33,
+      34,
+      36
+    ],
+    [
+      24,
+      32,
+      33,
+      34,
+      36
+    ]
+  ],
+  "config_names": [
+    "default",
+    "best_peak_load_no_pv",
+    "best_midday_pv",
+    "min_spanning_tree_r",
+    "random_neighbour",
+    "random_neighbour",
+    "random_neighbour"
+  ]
+}

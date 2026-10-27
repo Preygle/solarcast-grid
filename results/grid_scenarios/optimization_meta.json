@@ -1,0 +1,49 @@
+{
+  "days_total": 167,
+  "days_all_cases_optimal": 167,
+  "battery": {
+    "bus": 17,
+    "power_mw": 1.5,
+    "energy_mwh": 6.0,
+    "eta": 0.95,
+    "soc_min": 0.1,
+    "soc_max": 0.9,
+    "soc_init": 0.5
+  },
+  "weights": {
+    "curt": 1.0,
+    "loss": 1.0,
+    "ramp": 0.05,
+    "deg": 0.005,
+    "slack": 1000.0
+  },
+  "export_limit_mw": 1.0,
+  "pv_rated_mw_per_site": 1.5,
+  "flex_frac": 0.1,
+  "forecast_mae_mw_on_these_days": {
+    "solar_mw": 1304.4674965595987,
+    "demand_mw": 4660.647230108606
+  },
+  "status_counts": [
+    [
+      "baseline",
+      "Optimal",
+      167
+    ],
+    [
+      "forecast_informed",
+      "Optimal",
+      167
+    ],
+    [
+      "perfect_foresight",
+      "Optimal",
+      167
+    ],
+    [
+      "rule_based",
+      "Optimal",
+      167
+    ]
+  ]
+}
