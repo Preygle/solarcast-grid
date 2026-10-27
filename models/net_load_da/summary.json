@@ -1,0 +1,91 @@
+{
+  "task": "net_load_da",
+  "target": "net_load_mw",
+  "horizon": "da",
+  "selected_model": "xgboost",
+  "selected_by": "lowest validation MAE",
+  "pi_level": 0.8,
+  "pi_empirical_coverage_test": 0.7325440927760328,
+  "pi_halfwidth_by_hour": {
+    "0": 7581.857879579627,
+    "1": 7668.62054388433,
+    "2": 7393.040935859072,
+    "3": 7104.444437120838,
+    "4": 7291.521076486598,
+    "5": 7234.245388098883,
+    "6": 7599.024944672565,
+    "7": 7384.993348287209,
+    "8": 7383.5427736820075,
+    "9": 8490.842829055013,
+    "10": 9201.893845500996,
+    "11": 10408.220378176402,
+    "12": 10914.778040111556,
+    "13": 11365.442522925941,
+    "14": 11076.667711042264,
+    "15": 10639.892739656852,
+    "16": 10261.831764886376,
+    "17": 9976.954433552117,
+    "18": 9420.9973041451,
+    "19": 8288.493439934298,
+    "20": 8155.312814072636,
+    "21": 8316.425022116124,
+    "22": 8783.581651415898,
+    "23": 9453.840646238294
+  },
+  "feature_spec": {
+    "target": "net_load_mw",
+    "horizon": "da",
+    "target_lags": [
+      48,
+      72,
+      168
+    ],
+    "exog_lags": {
+      "demand_mw": [
+        48,
+        168
+      ],
+      "solar_mw": [
+        48,
+        168
+      ],
+      "wind_mw": [
+        48,
+        168
+      ]
+    },
+    "issue_features": true,
+    "calendar": true,
+    "weather": []
+  },
+  "features": [
+    "net_load_mw_lag48",
+    "net_load_mw_lag72",
+    "net_load_mw_lag168",
+    "demand_mw_lag48",
+    "demand_mw_lag168",
+    "solar_mw_lag48",
+    "solar_mw_lag168",
+    "wind_mw_lag48",
+    "wind_mw_lag168",
+    "tgt_last_at_issue",
+    "tgt_mean24_at_issue",
+    "tgt_std24_at_issue",
+    "tgt_max24_at_issue",
+    "tgt_mean168_at_issue",
+    "tgt_max720_at_issue",
+    "tgt_samehour_mean7d",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "doy_sin",
+    "doy_cos",
+    "month"
+  ],
+  "n_train": 24459,
+  "n_val": 4398,
+  "n_test": 4139,
+  "mase_scale": 4933.2203291949445
+}

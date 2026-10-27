@@ -1,0 +1,97 @@
+{
+  "task": "net_load_h1",
+  "target": "net_load_mw",
+  "horizon": "h1",
+  "selected_model": "lightgbm",
+  "selected_by": "lowest validation MAE",
+  "pi_level": 0.8,
+  "pi_empirical_coverage_test": 0.6849480550857695,
+  "pi_halfwidth_by_hour": {
+    "0": 1325.891913221922,
+    "1": 1149.8303145530867,
+    "2": 1008.4931270328816,
+    "3": 1013.1666839705491,
+    "4": 1136.5625495007203,
+    "5": 1741.3127506488993,
+    "6": 2597.9628274834367,
+    "7": 2480.181393740053,
+    "8": 3298.7272264791773,
+    "9": 3316.8086913799402,
+    "10": 3196.872254286736,
+    "11": 2834.9892904500534,
+    "12": 2143.9424385138964,
+    "13": 2688.1408266406797,
+    "14": 3282.1313998515425,
+    "15": 3148.6938851644927,
+    "16": 2874.8583199004056,
+    "17": 3726.5777750387206,
+    "18": 4406.492366347409,
+    "19": 3577.229524212313,
+    "20": 2624.1284607981393,
+    "21": 2006.5356980357437,
+    "22": 1794.1839450314294,
+    "23": 1671.802325552341
+  },
+  "feature_spec": {
+    "target": "net_load_mw",
+    "horizon": "h1",
+    "target_lags": [
+      1,
+      2,
+      3,
+      24,
+      48,
+      168
+    ],
+    "exog_lags": {
+      "demand_mw": [
+        1,
+        24
+      ],
+      "solar_mw": [
+        1,
+        24
+      ],
+      "wind_mw": [
+        1,
+        24
+      ]
+    },
+    "issue_features": true,
+    "calendar": true,
+    "weather": []
+  },
+  "features": [
+    "net_load_mw_lag1",
+    "net_load_mw_lag2",
+    "net_load_mw_lag3",
+    "net_load_mw_lag24",
+    "net_load_mw_lag48",
+    "net_load_mw_lag168",
+    "demand_mw_lag1",
+    "demand_mw_lag24",
+    "solar_mw_lag1",
+    "solar_mw_lag24",
+    "wind_mw_lag1",
+    "wind_mw_lag24",
+    "tgt_last_at_issue",
+    "tgt_mean24_at_issue",
+    "tgt_std24_at_issue",
+    "tgt_max24_at_issue",
+    "tgt_mean168_at_issue",
+    "tgt_max720_at_issue",
+    "tgt_samehour_mean7d",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "doy_sin",
+    "doy_cos",
+    "month"
+  ],
+  "n_train": 24459,
+  "n_val": 4398,
+  "n_test": 4139,
+  "mase_scale": 4933.2203291949445
+}

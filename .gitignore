@@ -10,3 +10,6 @@ data/raw/**/*.xlsx
 data/interim/
 *.log
 .ipynb_checkpoints/
+
+# Random-forest artefacts are 100-230 MB each (not selected for any task); regenerate with scripts/train_models.py
+models/*/random_forest.joblib

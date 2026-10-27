@@ -1,0 +1,91 @@
+{
+  "task": "solar_h1",
+  "target": "solar_mw",
+  "horizon": "h1",
+  "selected_model": "lightgbm",
+  "selected_by": "lowest validation MAE",
+  "pi_level": 0.8,
+  "pi_empirical_coverage_test": 0.8059701492537313,
+  "pi_halfwidth_by_hour": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 19.908136187122405,
+    "5": 23.202158678655426,
+    "6": 298.8684012955101,
+    "7": 881.2371375209704,
+    "8": 1614.431080273488,
+    "9": 1537.539943872628,
+    "10": 1418.8235309453917,
+    "11": 2920.707940286356,
+    "12": 1362.8966555537336,
+    "13": 1814.6302998803615,
+    "14": 1657.7655926662833,
+    "15": 1409.209727507976,
+    "16": 1041.7956137939527,
+    "17": 792.6014960749742,
+    "18": 536.8419561416262,
+    "19": 341.109818119766,
+    "20": 0.0,
+    "21": 0.0,
+    "22": 0.0,
+    "23": 0.0
+  },
+  "feature_spec": {
+    "target": "solar_mw",
+    "horizon": "h1",
+    "target_lags": [
+      1,
+      2,
+      3,
+      24,
+      48,
+      168
+    ],
+    "exog_lags": {
+      "demand_mw": [
+        1,
+        24
+      ],
+      "wind_mw": [
+        1,
+        24
+      ]
+    },
+    "issue_features": true,
+    "calendar": true,
+    "weather": []
+  },
+  "features": [
+    "solar_mw_lag1",
+    "solar_mw_lag2",
+    "solar_mw_lag3",
+    "solar_mw_lag24",
+    "solar_mw_lag48",
+    "solar_mw_lag168",
+    "demand_mw_lag1",
+    "demand_mw_lag24",
+    "wind_mw_lag1",
+    "wind_mw_lag24",
+    "tgt_last_at_issue",
+    "tgt_mean24_at_issue",
+    "tgt_std24_at_issue",
+    "tgt_max24_at_issue",
+    "tgt_mean168_at_issue",
+    "tgt_max720_at_issue",
+    "tgt_samehour_mean7d",
+    "hour",
+    "hour_sin",
+    "hour_cos",
+    "dow",
+    "is_weekend",
+    "doy_sin",
+    "doy_cos",
+    "month"
+  ],
+  "n_train": 24737,
+  "n_val": 4398,
+  "n_test": 4154,
+  "mase_scale": 719.5936546695561
+}

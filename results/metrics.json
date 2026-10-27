@@ -1,0 +1,130 @@
+{
+  "demand_da": {
+    "selected_model": "xgboost",
+    "selected_test": {
+      "mae": 4630.752556176052,
+      "rmse": 6492.455213792815,
+      "r2": 0.8868043460269948,
+      "nmae_pct": 2.3342656431085076,
+      "mase": 1.0505099131507893
+    },
+    "selected_val_mae": 4225.600485828314,
+    "best_baseline": "seasonal_naive_24h",
+    "best_baseline_test_mae": 7003.386623798077,
+    "test_mae_improvement_vs_best_baseline_pct": 33.87838191825112,
+    "best_test_model_post_hoc": "lightgbm",
+    "pi_empirical_coverage_test": 0.7513759272553242
+  },
+  "demand_h1": {
+    "selected_model": "lightgbm",
+    "selected_test": {
+      "mae": 1426.536060596641,
+      "rmse": 2031.9099446024964,
+      "r2": 0.9889128291560901,
+      "nmae_pct": 0.7190870327253777,
+      "mase": 0.3236170049995807
+    },
+    "selected_val_mae": 1234.4047244244198,
+    "best_baseline": "persistence",
+    "best_baseline_test_mae": 4396.209880268199,
+    "test_mae_improvement_vs_best_baseline_pct": 67.55077442959544,
+    "best_test_model_post_hoc": "lightgbm",
+    "pi_empirical_coverage_test": 0.732471883225652
+  },
+  "net_load_da": {
+    "selected_model": "xgboost",
+    "selected_test": {
+      "mae": 6487.747387212948,
+      "rmse": 8516.790444089735,
+      "r2": 0.8304287312916616,
+      "nmae_pct": 3.8055689525509835,
+      "mase": 1.3151140541642272
+    },
+    "selected_val_mae": 5584.664694862292,
+    "best_baseline": "seasonal_naive_24h",
+    "best_baseline_test_mae": 7780.752061683005,
+    "test_mae_improvement_vs_best_baseline_pct": 16.61799096307891,
+    "best_test_model_post_hoc": "ridge",
+    "pi_empirical_coverage_test": 0.7325440927760328
+  },
+  "net_load_h1": {
+    "selected_model": "lightgbm",
+    "selected_test": {
+      "mae": 2015.7649586497062,
+      "rmse": 2772.8004384048186,
+      "r2": 0.982026296444728,
+      "nmae_pct": 1.1824030876104992,
+      "mase": 0.40861036486052515
+    },
+    "selected_val_mae": 1599.9539367788948,
+    "best_baseline": "seasonal_naive_24h",
+    "best_baseline_test_mae": 6235.356719866796,
+    "test_mae_improvement_vs_best_baseline_pct": 67.67201863163382,
+    "best_test_model_post_hoc": "lightgbm",
+    "pi_empirical_coverage_test": 0.6849480550857695
+  },
+  "solar_da": {
+    "selected_model": "hist_gbr",
+    "selected_test": {
+      "mae": 1276.7631758851628,
+      "rmse": 2477.1732197230313,
+      "r2": 0.9883746089990066,
+      "nmae_pct": 6.933866933250769,
+      "mase": 1.774283538494324
+    },
+    "selected_val_mae": 1080.7637945417243,
+    "best_baseline": "seasonal_naive_24h",
+    "best_baseline_test_mae": 1294.6574432002599,
+    "test_mae_improvement_vs_best_baseline_pct": 1.3821623170731767,
+    "best_test_model_post_hoc": "random_forest",
+    "pi_empirical_coverage_test": 0.8148772267693789
+  },
+  "solar_h1": {
+    "selected_model": "lightgbm",
+    "selected_test": {
+      "mae": 559.1104874494456,
+      "rmse": 1118.7504834511915,
+      "r2": 0.9976288376635374,
+      "nmae_pct": 3.0364266405723193,
+      "mase": 0.7769808472063225
+    },
+    "selected_val_mae": 477.4055525283716,
+    "best_baseline": "seasonal_naive_24h",
+    "best_baseline_test_mae": 1054.8015669170502,
+    "test_mae_improvement_vs_best_baseline_pct": 46.993775418479814,
+    "best_test_model_post_hoc": "lightgbm",
+    "pi_empirical_coverage_test": 0.8059701492537313
+  },
+  "wind_da": {
+    "selected_model": "ridge",
+    "selected_test": {
+      "mae": 2040.0470314478573,
+      "rmse": 2716.0758785386397,
+      "r2": 0.7826094033574987,
+      "nmae_pct": 22.01666945862565,
+      "mase": 1.191496783881304
+    },
+    "selected_val_mae": 1980.0654430498184,
+    "best_baseline": "samehour_mean_7d",
+    "best_baseline_test_mae": 2694.127302655897,
+    "test_mae_improvement_vs_best_baseline_pct": 24.278001658022653,
+    "best_test_model_post_hoc": "lstm",
+    "pi_empirical_coverage_test": 0.7793483469094394
+  },
+  "wind_h1": {
+    "selected_model": "lightgbm",
+    "selected_test": {
+      "mae": 389.1486528955029,
+      "rmse": 535.3301099838787,
+      "r2": 0.991554987440352,
+      "nmae_pct": 4.199784185852345,
+      "mase": 0.22728366612590262
+    },
+    "selected_val_mae": 341.4386333374314,
+    "best_baseline": "persistence",
+    "best_baseline_test_mae": 612.3601894484412,
+    "test_mae_improvement_vs_best_baseline_pct": 36.45102023271421,
+    "best_test_model_post_hoc": "xgboost",
+    "pi_empirical_coverage_test": 0.7513176808816483
+  }
+}
