@@ -60,6 +60,27 @@ def test_saved_models_reload_and_predict_unseen_day():
 
 
 @pytest.mark.skipif(not REG.exists(), reason="models not trained")
+@pytest.mark.parametrize("target", ["solar_mw", "demand_mw"])
+def test_interface_matches_saved_test_predictions(target):
+    """Single-day forecasts from the interface must equal the predictions stored by training for
+    the same rows (regression test for index-gap misalignment of lag features)."""
+    from src.data.preprocess import load_hourly
+    from src.inference.forecast import Forecaster
+    h = load_hourly()
+    fc = Forecaster()
+    task = f"{target.replace('_mw', '')}_da"
+    saved = pd.read_parquet(ROOT / "results" / "predictions" / f"{task}.parquet")
+    sel = fc.registry[task]["selected_model"]
+    for day in ["2025-02-03", "2025-04-12", "2025-06-24"]:
+        when = pd.date_range(day, periods=24, freq="h")
+        p = fc.predict(h, target, "da", when)[target]
+        ref = saved[sel].reindex(when)
+        ok = ref.notna().to_numpy()  # training stored predictions only for hours with observed targets
+        assert ok.sum() >= 12
+        assert np.allclose(p.to_numpy()[ok], ref.to_numpy()[ok], rtol=1e-6, atol=1e-3), day
+
+
+@pytest.mark.skipif(not REG.exists(), reason="models not trained")
 def test_registry_consistency():
     reg = json.loads(REG.read_text())
     for task, e in reg.items():

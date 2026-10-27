@@ -1,12 +1,12 @@
 167 test days; forecast models: solar=hist_gbr, demand=xgboost
-   20/167 days (90s)
-   40/167 days (177s)
-   60/167 days (264s)
-   80/167 days (351s)
-   100/167 days (438s)
-   120/167 days (525s)
-   140/167 days (612s)
-   160/167 days (699s)
+   20/167 days (91s)
+   40/167 days (179s)
+   60/167 days (266s)
+   80/167 days (353s)
+   100/167 days (441s)
+   120/167 days (529s)
+   140/167 days (617s)
+   160/167 days (705s)
 case                        baseline  rule_based  forecast_informed  perfect_foresight
 pv_available_mwh            7140.185    7140.185           7140.185           7140.185
 curtailment_mwh              967.870     578.765             91.698             41.470

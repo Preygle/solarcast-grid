@@ -56,8 +56,9 @@ class Forecaster:
         from src.features.build import issue_time
         tau = issue_time(when, horizon)
         hist = hourly.loc[: tau.max()].copy()
-        # Extend the index to the target hours (unknown values = NaN) so features can be aligned.
-        full_idx = hist.index.union(when)
+        # Extend to a CONTIGUOUS hourly index up to the last target hour (unknown values = NaN):
+        # lag features are positional shifts, so any gap in the index would misalign them.
+        full_idx = pd.date_range(hist.index.min(), max(hist.index.max(), when.max()), freq="h")
         hist = hist.reindex(full_idx)
         hist.loc[hist.index > tau.max(), :] = np.nan
         hist[target] = hist[target].fillna(-1.0)  # placeholder so rows survive the y.notna() filter
